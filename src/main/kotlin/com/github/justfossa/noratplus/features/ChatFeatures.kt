@@ -1,7 +1,7 @@
-package com.example.features
+package com.github.justfossa.noratplus.features
 
-import com.example.ExampleMod
-import com.example.utils.ChatUtils
+import com.github.justfossa.noratplus.ExampleMod
+import com.github.justfossa.noratplus.utils.ChatUtils
 import net.minecraftforge.client.event.ClientChatReceivedEvent
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 

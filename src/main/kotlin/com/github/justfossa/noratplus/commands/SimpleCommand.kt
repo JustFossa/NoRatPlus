@@ -1,6 +1,6 @@
-package com.example.commands
+package com.github.justfossa.noratplus.commands
 
-import com.example.errors.CommandError
+import com.github.justfossa.noratplus.errors.CommandError
 import net.minecraft.command.CommandBase
 import net.minecraft.command.ICommandSender
 import net.minecraft.util.BlockPos
