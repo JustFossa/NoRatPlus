@@ -23,4 +23,4 @@ plugins {
 }
 
 
-rootProject.name = "NoRatPlus"
+rootProject.name = "noratplus"

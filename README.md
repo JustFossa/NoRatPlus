@@ -1,24 +1,17 @@
-This template is an example 1.8.9 forge mod written in Kotlin that builds upon
-nea's [template](https://github.com/romangraef/Forge1.8.9Template/tree/kotlin).
-It is written by [SkyHanni](https://github.com/hannibal002/SkyHanni) developers, with the intent to show how easy it is
-to work with [MoulConfig](https://github.com/NotEnoughUpdates/MoulConfig) and other tools.
-![image](https://github.com/hannibal002/Example-1.8.9-Mod/assets/24389977/330485e3-f87b-4d29-8fc6-76abb23dc453)
-
-Here is the rest of the original readme from nea:
-
-
-Architectury Loom based template for 1.8.9 kotlin forge mods
+ Architectury Loom based template for 1.8.9 kotlin forge mods
 
 **For other templates, do check out the [other branches of this repository](https://github.com/romangraef/Forge1.8.9Template/branches/all)**
 
-To get started, clone this repository.
-In `build.gradle.kts`, replace the values of `baseGroup` and `group` with your own names.
-In `settings.gradle.kts` change `rootProject.name` to your desired mod id.
+## Usage
 
-The `com.example` package needs to be renamed to match the value of `baseGroup`.
+Check out https://moddev.nea.moe/ for a full tutorial on legacy modding.
 
-If you don't want mixins (which allow for modifying vanilla code), then you can remove the references to mixins from
-the `build.gradle.kts` at the lines specified with comments and the `com.example.mixin` package.
+Alternatively, read here for a basic overview on how to use this repository.
+
+To get started, [Use this template](https://github.com/new?template_name=Forge1.8.9Template&template_owner=nea89o).
+
+> [!WARNING]
+> Do not Fork or Clone or Download ZIP this template. If you "use" this template a custom mod id will be generated. You can do that manually using the `make-my-own` script, if you are on linux. If not, just click the use this template button. If you want to use kotlin or make a 1.12 mod check the "Include all branches" and change the default branch in https://github.com/yourname/yourreponame/branches
 
 Please note that Mixins should be kept in their own package, and should exclusively be written in Java, since older versions
 of Mixin don't play well with Kotlin.
@@ -36,6 +29,13 @@ called `Minecraft Client`. If it doesn't then try relaunching your IntelliJ. **W
 To export your project, run the `gradle build` task, and give other people the
 file `build/libs/<modid>-<version>.jar`. Ignore the jars in the `build/badjars` folder. Those are intermediary jars that
 are used by the build system but *do not work* in a normal forge installation.
+
+If you don't want mixins (which allow for modifying vanilla code), then you can remove the references to mixins from
+the `build.gradle.kts` at the lines specified with comments and the `com.example.mixin` package.
+
+If you don't want access transformers (which allow for making methods public/non-final) you can delete the
+`accesstransformer.cfg` file. If you make a change to the `accesstransformers.cfg` you might need to rebuild your
+project using `./gradlew build --refresh-dependencies`.
 
 ### For those who have not an attention span
 

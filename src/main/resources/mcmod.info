@@ -1,7 +1,7 @@
 [
   {
     "modid": "${modid}",
-    "name": "Example Mod",
+    "name": "Xample Mod",
     "description": "A mod that is used as an example.",
     "version": "${version}",
     "mcversion": "${mcversion}",
