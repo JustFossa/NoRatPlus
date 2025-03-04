@@ -24,6 +24,7 @@ kotlin {
     jvmToolchain(8)
 }
 
+
 // Minecraft configuration:
 loom {
     log4jConfigs.from(file("log4j2.xml"))
@@ -75,8 +76,10 @@ dependencies {
     minecraft("com.mojang:minecraft:1.8.9")
     mappings("de.oceanlabs.mcp:mcp_stable:22-1.8.9")
     forge("net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
     shadowImpl(kotlin("stdlib-jdk8"))
+    shadowImpl("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
 
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT")

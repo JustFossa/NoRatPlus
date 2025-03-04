@@ -1,6 +1,6 @@
 package lol.justfossa.noratplus
 
-import lol.justfossa.noratplus.utils.RequestUtils
+import lol.justfossa.noratplus.utils.RequestBlocker
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
 class NoRatPlus {
     @Mod.EventHandler
     fun preInit(event: FMLPreInitializationEvent) {
-        RequestUtils.blockRequests()
+        RequestBlocker.blockRequests()
+        println("NoRatPlus Loaded");
     }
 }
