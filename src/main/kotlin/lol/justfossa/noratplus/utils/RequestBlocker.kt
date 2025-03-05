@@ -29,6 +29,8 @@ class BlockedProxySelector(private val defaultSelector: ProxySelector?, private 
     override fun select(uri: URI?): List<Proxy> {
         if(uri == null) return listOf(Proxy.NO_PROXY)
 
+        println(whitelist)
+
         if(whitelist.contains(uri.host)) {
             return defaultSelector?.select(uri) ?: listOf(Proxy.NO_PROXY)
         }

@@ -6,7 +6,9 @@ import kotlinx.serialization.json.*;
 
 object ConfigHelper {
     fun getWhitelist(): JsonArray {
-        val whitelistFile = File(getMinecraftConfigPath()," whitelist.json")
+        val whitelistFile = File(getMinecraftConfigPath(),"whitelist.json")
+
+        println(whitelistFile)
 
         if(whitelistFile.exists()) {
             return Json.decodeFromString(whitelistFile.readText().trimIndent())
