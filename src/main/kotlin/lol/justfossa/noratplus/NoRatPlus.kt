@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
 class NoRatPlus {
     @Mod.EventHandler
     fun preInit(event: FMLPreInitializationEvent) {
+        ConfigHelper.downloadConfigFile()
         RequestBlocker.blockRequests()
         println("NoRatPlus Loaded");
     }

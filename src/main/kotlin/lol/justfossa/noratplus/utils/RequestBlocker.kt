@@ -11,13 +11,7 @@ object RequestBlocker {
     private var whitelist: List<String> = listOf();
     fun blockRequests() {
         if(isProxySet) return
-        val whitelistFile = File("whitelist.json")
-
-        if(whitelistFile.exists()) {
-            val json: List<String> = Json.decodeFromString(whitelistFile.readText().trimIndent())
-            println(json)
-            whitelist = json
-        }
+        whitelist = ConfigHelper.getWhitelist().map { it.jsonPrimitive.content }
 
         println(whitelist)
 
@@ -36,7 +30,6 @@ class BlockedProxySelector(private val defaultSelector: ProxySelector?, private 
         if(uri == null) return listOf(Proxy.NO_PROXY)
 
         if(whitelist.contains(uri.host)) {
-            println("Allowed request to ${uri.host}")
             return defaultSelector?.select(uri) ?: listOf(Proxy.NO_PROXY)
         }
         println("Blocked request to ${uri.host}")
