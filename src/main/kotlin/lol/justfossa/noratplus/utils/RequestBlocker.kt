@@ -4,6 +4,7 @@ import java.io.IOException
 import java.net.*
 import java.io.File
 import kotlinx.serialization.json.*;
+import lol.justfossa.noratplus.render.Gui
 
 
 object RequestBlocker {
@@ -35,6 +36,8 @@ class BlockedProxySelector(private val defaultSelector: ProxySelector?, private 
             return defaultSelector?.select(uri) ?: listOf(Proxy.NO_PROXY)
         }
         println("Blocked request to ${uri.host}")
+
+        Gui.incrementBlockedRequests();
 
         return listOf()
     }
